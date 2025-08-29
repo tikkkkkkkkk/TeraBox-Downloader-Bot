@@ -13,7 +13,7 @@ from telethon.types import Message, UpdateNewMessage
 
 from cansend import CanSend
 from config import *
-from terabox import get_data
+from terabox import fetch_data as get_data
 from tools import (
     convert_seconds,
     download_file,
@@ -157,7 +157,7 @@ async def ping_pong(m: UpdateNewMessage):
 # Generate gift codes
 @bot.on(
     events.NewMessage(
-        pattern="/gc (\d+)",
+        
         incoming=True,
         outgoing=False,
         from_users=ADMINS,
